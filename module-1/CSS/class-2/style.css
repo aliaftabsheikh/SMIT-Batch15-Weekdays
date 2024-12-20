@@ -1,0 +1,70 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+
+}
+
+h1{
+    text-decoration: underline;
+    color: white;
+}
+
+p{
+    background-color: aqua;
+    font-weight: bold;
+}
+
+/* Puesdo Element */
+
+/* p::first-letter{    
+   color: red;
+    font-size: 20px;
+} */
+
+
+/* p::first-line{
+      background-color: gray;
+    color: white;
+} */
+
+
+/* Puesdo-class */
+
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: purple;
+    color: white;
+    transition: .2s ease all;
+    font-size: 40px;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+
+}
+
+
+button{
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    font-size: x-large;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.2s ease all ;
+}
+
+button:active{
+    width: 250px;
+    height: 70px;
+    background-color: aqua;
+    color: black;
+}
+
+ .box:hover{
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+}
+ 
