@@ -1,0 +1,112 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* .box{
+    width: 300px;
+    height: 300px;
+    background-color: purple;
+    color: white;
+    transition: 0.2s ease all;
+    font-size: 40px;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+
+} 
+
+ .box:hover{
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    rotate: 360deg;
+} */
+
+
+/* button{
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    font-size: x-large;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.2s ease all ;
+}
+
+button:active{
+    width: 250px;
+    height: 70px;
+    background-color: aqua;
+    color: black;
+} */
+
+/* input{
+ transition: .2s ease-in all;
+}
+
+input:focus{
+    background-color: red;
+    color: white;
+    outline: none;
+    border: 2px solid green;
+    border-radius: 10px;
+} */
+
+/* a:link{
+    color: red;
+    text-decoration: none;
+}
+
+a:visited{
+    color: green;
+    text-decoration: none;
+} */
+
+
+.box{
+    width: 600px;
+    /* max-width: 800px; */
+    height: 400px;
+    background-color: purple;
+    color: white;
+    transition: 0.2s ease all;
+    font-size: 40px;
+    text-align: center;
+    align-content: center;
+    border-color: red;
+    border-style: solid;
+     border-width: 20px 50px  ;
+
+
+    /* border-width: 20px; */
+    /* border-right-width: 50px;
+    border-left-width: 50px; */
+    /* ;
+  
+
+
+    /* border:  solid red */
+    /* margin: auto; */
+
+}  
+
+/* div{
+    background-color: red;
+    width: 1000px;
+    overflow: auto;
+
+}
+
+p{
+    width: 1200px;
+    background-color: aqua;
+    font-size: 20px;
+    font-weight: bold;
+
+} */
