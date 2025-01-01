@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+  display: flex;
+  /*space-between space-evenly, space-around */
+   /* justify-content: center;
+   align-items: top; */
+   gap: 10px;
+  
+   justify-content: center; 
+    align-items: center;
+   flex-wrap: wrap;
+
+  
+  height: 200vh;
+  font-family: "Courier New", Courier, monospace;
+  background-color: black;
+  background-color: black;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  text-align: center;
+  align-content: center;
+  color: white;
+  border: 2px solid white;
+}
+
+.box1 {
+  background-color: purple;
+  order: 2
+}
+
+.box2 {
+  background-color: red;
+  order: 1;
+  /* flex-grow: 1;
+  flex-shrink: 2; */
+}
+
+.box3 {
+  background-color: green;
+  order: 4;
+  /* flex-grow: 3;
+  flex-shrink: 3; */
+  
+}
+
+
+
+.box4 {
+  background-color: blue;
+  order: 3;
+}
