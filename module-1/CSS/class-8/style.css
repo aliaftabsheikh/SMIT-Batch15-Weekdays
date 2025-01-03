@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.image{
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin: 0px auto;
+}
+
+
+.container{
+    /* background-color: red; */
+    /* background-image: url('https://cdn.pixabay.com/photo/2023/06/10/13/11/water-8053999_640.png'); */
+
+    background-image: -webkit-gradient(linear, 0% 0%,
+ 0% 100%, from(#0bbaf9), to(#090dfc));
+ 
+    width: 100%;
+    /* height: 100vh; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-shadow: 4px 6px 5px rgb(12, 40, 224);
+    background-attachment: fixed;   
+
+    background-position: bottom right;
+
+    /* background: url('https://cdn.pixabay.com/photo/2023/06/10/13/11/water-8053999_640.png') no-repeat  center fixed; */
+}
+
+
+@media(max-width: 1200px){
+    .container{
+        background-image: -webkit-gradient(linear, 0% 0%,
+        0% 100%, from(#0ec77d), to(#5d05ff));
+
+        font-size:28px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container{
+        background-image: -webkit-gradient(linear, 0% 0%,
+        0% 100%, from(#f5af98), to(#f54003));
+
+        font-size:28px;
+    }
+}
+
+
+
+@media (max-width: 600px){
+    .container{
+        background-image: -webkit-gradient(linear, 0% 0%,
+        0% 100%, from(#1af50b), to(#063516));
+
+        font-size:28px;
+    }
+}
+
+
