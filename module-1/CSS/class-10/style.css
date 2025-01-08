@@ -1,0 +1,129 @@
+/* UNIVERSAL SELECTOR */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* TYPE SELECTOR */
+
+/* h1, h2, h3{
+   font-size: 24px;
+   font-family: 'Courier New', Courier, monospace;
+   background-color: black;
+   color: white;
+   margin: 20px 0px;
+}
+ */
+
+
+ /* CLASS SELECTOR */
+
+/* .heading{
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: white;
+    margin: 20px 0px;
+} */
+
+
+/* ID SELECTOR */
+
+ #head1, #head2, #head3{
+   font-size: 24px;
+   font-family: 'Courier New', Courier, monospace;
+   background-color: black;
+   color: white;
+   margin: 20px 0px;
+}
+
+
+ /* #head2{
+   font-size: 24px;
+   font-family: 'Courier New', Courier, monospace;
+   background-color: black;
+   color: white;
+   margin: 20px 0px;
+}
+ #head3{
+   font-size: 24px;
+   font-family: 'Courier New', Courier, monospace;
+   background-color: black;
+   color: white;
+   margin: 20px 0px;
+} */
+
+
+/* CHILD SELECTOR */
+
+/* li > a{
+    background-color: green;
+} */
+
+
+/* DESCENDANT SELECTOR */
+
+/* p a{
+    background-color: red;
+} */
+
+/* ADJACENT SIBLING SELECTOR */
+/* 
+h1 ~  p{
+    background-color: yellow;
+} */
+
+
+/* ========================= ATTRIBUTE SELECTOR ============================= */
+
+/* EXISTENCE SELECTOR */
+
+/* p[class]{
+    background-color: yellow;
+} */
+
+/* EQUALITY SELECTOR */
+
+/* p[class="para-2"]{
+    background-color: blue;
+} */
+
+
+/* SPACE */
+
+/* p[class~="cute"]{
+    background-color: green;
+} */
+
+/* PREFIX SELECTOR */
+
+/* p[class^="k"]{
+    background-color: blue;
+    color: white;
+} */
+
+
+/* SUBSTRING */
+
+/* p[class*="cat"]{
+    background-color: black;
+    color: white;
+} */
+
+
+/* SUFFIX */
+
+/* p[class$="i"]{
+    background-color: yellow;
+    color: black;
+} */
+
+
+/* COLORS  */
+
+p{
+    background-color: rgb(255, 0, 0);
+    color: #000000;
+}
