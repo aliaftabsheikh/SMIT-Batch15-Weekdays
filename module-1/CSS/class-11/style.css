@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    /* transition-property: all;
+    transition-duration: 1s; */
+
+    /* transition-delay: 0.1s; */
+
+   /* transition-timing-function: ease ; */
+
+   transition: 1s ease 0.3s all ;
+
+
+    font-size: 140px;
+    text-align: center;
+    align-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+/* 
+    animation-name: boxMove;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running; */
+
+
+    animation: 5s ease-in 2s infinite alternate forwards running boxMove
+}
+
+
+@keyframes boxMove {
+    0%{
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    20%{
+        margin-left: 300px;
+        margin-top: 0px;
+    }
+
+    40%{
+        margin-top: 300px;
+        margin-left: 300px;
+    }
+
+    60%{
+        margin-left: 800px ;
+        margin-top: 300px;
+    }
+
+    80%{
+        margin-left: 800px ;
+        margin-top: 100px;
+    }
+
+    100%{
+        margin-left: 1200px;
+        margin-top: 0px;
+    }
+}
+
+
+/* .container:hover{
+    background-color: green;
+    width: 600px;
+    height: 600px;
+    cursor: pointer;
+    font-size: 200px;
+    color: rgb(255, 0, 255);
+    font-weight: bolder;
+} */
