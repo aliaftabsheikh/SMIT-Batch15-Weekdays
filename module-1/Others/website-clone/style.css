@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header_container {
+  /* height: 70px; */
+  background-color: red;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+}
+
+.header_subcontainer {
+  position: relative;
+  width: 70%;
+  height: 100%;
+}
+
+.logo {
+  position: absolute;
+  transition: 0.5s ease all;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+.navbar {
+  color: white;
+}
+
+.navbar > ul {
+  display: flex;
+  /* background-color: aliceblue; */
+  color: white;
+  margin-top: 8px;
+
+  font-weight: bold;
+  flex: 1;
+  align-items: end;
+  justify-content: end;
+  list-style-type: none;
+  gap: 40px;
+}
+
+.search-icon {
+  background-color: black;
+  width: 20px;
+  height: 20px;
+}
+
+/* HERO SECTION  */
+
+.hero_container {
+  /* height: calc(100vh - 100px); */
+  background: url("images/bg-compressor-2.jpg");
+  background-size: cover;
+ background-position: top;
+}
+
+.side_slip > img {
+
+margin-top: 60px;
+  width: 600px;
+}
+
+
+.cola-img{
+    display: flex;
+    justify-content: center;
+    margin-top: -120px;
+    margin-left: -120px;
+}
+
+.cola-img > img{
+    width: 300px;
+}
+
+.all-cold-drinks{
+    display: flex;
+    justify-content: center;
+}
+
+.all-cold-drinks > img{
+    width: 61vw;
+}
