@@ -1,7 +1,7 @@
 // alert("Hello World !!")
 
 // const age = Number(prompt("Enter your age", 100)) ;
-// const age = "18" ;
+// // const age = "18" ;
 
 // console.log(age === 18)
 
@@ -15,11 +15,20 @@
 // }
 
 
-// let value = "21"
-
-// if(typeof value === "string"){
-//     console.log("Succesfully convert to Number", Number(value))
+// if(login === true){
+//     console.log("GO TO HOME PAGE")
+// }else{
+//     console.log("Again Login !!")
 // }
+
+
+let value = "21"
+
+
+
+if(typeof value === "string"){
+    console.log("Succesfully convert to Number", Number(value))
+}
 
 
 // console.log("10" / "20")
@@ -46,10 +55,10 @@
 
 // const calculate =  (4 + 9) / 2 * (2 - 7) + 5
 
-                //    13 / 2 * -5 + 5
-                //    6.5 * -5 + 5
-                //    -32.5 + 5
-                //    -27.5
+//                    13 / 2 * -5 + 5
+//                    6.5 * -5 + 5
+//                    -32.5 + 5
+//                    -27.5
 
 // const calculate =   5 + 6 / (2 * 2) - 9 + 2 * 7 / (9 / 3) * 6
 
@@ -67,13 +76,15 @@
 // console.log(calculate)
 
 
-// console.log(2 % 4 )
+// console.log(2 / 4 )
 
 
 
-// const exponentiation = 7 ** 3
-//                      7 * 7 * 7 
-// console.log(4 ** 0.5)
+const exponentiation = 2**7
+                     2 * 2 *  2 * 2 *  2 * 2 * 2
+console.log(4 ** 0.5)
+
+
 
 
 // let firstName = "Ali";
@@ -84,5 +95,5 @@
 // console.log(fullName)
 
 
-const concatination = 2 + 2 + "5" + 2 + 2
-console.log(concatination)
+// const concatination = 2 + 2 + "5" + 2 + 2
+// console.log(concatination)

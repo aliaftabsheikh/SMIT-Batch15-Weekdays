@@ -2,7 +2,9 @@
 
 // console.log("LINE 1", a);
 
-// let a = "Ali";
+// var a = undefined; //"MEMORY PHASE"
+var a = "Ali"; //"Code PHASE"
+
 
 // console.log("Line 5", a);
 
@@ -15,7 +17,17 @@
 
 // let fullName = firstName + ' ' + lastName
 
+
 // console.log(fullName)
+
+
+// concatination always apply on + operator
+
+// let num1 = 11
+// let num2 = "2"
+
+// let sum = num1 / num2
+// console.log(sum)
 
 
 // const firstName = "Ali";
@@ -26,6 +38,8 @@
 
 // console.log(fullName)
 
+
+
 // const num1 = "10"
 
 // const num2 = 2
@@ -34,9 +48,9 @@
 
 // console.log(sum)
 
-// console.log("10" == 10)
+console.log("10" === 10)
 
-// console.log(typeof(10.3 ))
+console.log(typeof a)
 
 
 // let firstName = "Ali";
@@ -62,11 +76,11 @@
 
 // const arr = [] // ARRAY
 
-const fname = "Anus";
+// const fname = "Anus";
 
-// alert("Welcome " + fname + " to our website")
+console.log("Welcome " + fname + " to our website")
 
-// alert(`Welcome ${fname} to our Website`)
+console.log(`Welcome ${fname} to our Website`)
 
 
 let age = prompt('How old are you?', 20)
