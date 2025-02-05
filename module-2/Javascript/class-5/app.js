@@ -37,10 +37,10 @@
 
 const login = false;
 
-  //true
-if(!login){
-    console.log("GO TO HOME PAGE")
-}
+//   //true
+// if(!login){
+//     console.log("GO TO HOME PAGE")
+// }
 
 // if(login === true){
 //     console.log("GO TO HOME PAGE")
