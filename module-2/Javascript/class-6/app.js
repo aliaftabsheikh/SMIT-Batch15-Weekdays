@@ -77,9 +77,9 @@
 // }
 
 
-const result = {} ? "HI" : "By!"
+// const result = {} ? "HI" : "By!"
 
-console.log(result)
+// console.log(result)
 
 
 
