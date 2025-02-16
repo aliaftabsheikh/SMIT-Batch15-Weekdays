@@ -5,9 +5,9 @@
 
          
 
-    //         0     1       2   3          4        5         6
-// let person = [ 23, false, "Ali","Arham", "Waqar", "Zeeshan", "anus"]
-// person[1] = true
+            // 0        1        2       3          4        5         6
+let person = [ 23, false, "Ali","Arham", "Waqar", "Zeeshan", "anus"]
+person[1] = true
 
 
 //  6 
@@ -31,6 +31,8 @@
 
 
 const fruits = ["Mango", "Apple", "Banana", "Strawberry", "Grapes", "Pinapple", "Orange"]
+
+console.log(fruits.length)
 
 // console.log(fruits.length)
 
@@ -66,20 +68,23 @@ const fruits = ["Mango", "Apple", "Banana", "Strawberry", "Grapes", "Pinapple", 
 // console.log(fruits[6])
 
 
-for(let i = 0; i < fruits.length; i++){
-    // console.log("Index " + i , " : " + fruits[i])
+// for(let i = 0; i < fruits.length; i++){
+//     // console.log("Index " + i , " : " + fruits[i])
 
-    if(fruits[i]  === "Orange"){
-        console.log("Orange Milgaaya " + "Gali no "+ i + " se lejana")
-    }
+//     if(fruits[i]  === "Orange"){
+//         console.log("Orange Milgaaya " + "Gali no "+ i + " se lejana")
+//     }
 
-    // TEMPLATE LITERALS
+//     // TEMPLATE LITERALS
 
-    // console.log(`Index ${i} : ${fruits[i]}`)
-}
+//     // console.log(`Index ${i} : ${fruits[i]}`)
+// }
+
+
+
 
 //! SHABANA EXAMPLE
 
-// for(let i = 1; i <= 150; i++){
+// for(let i = 1; i <= 100; i++){
 //     console.log("SORRY Shabana  !!")
 // }
