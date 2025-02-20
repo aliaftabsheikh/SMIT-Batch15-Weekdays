@@ -6,8 +6,6 @@
 // }
 
 
-
-
 // function greeting(){
 //   return "ALI AFTAB !"
 // }
