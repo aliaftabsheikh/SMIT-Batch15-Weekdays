@@ -1,0 +1,140 @@
+<!-- CLASS WORK ! -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-18</title>
+    <script src="app.js"></script>
+
+    <style>
+     /* img{
+        transition: transform 0.3s ease,
+         opacity 0.3s ease;
+            cursor: pointer;
+        } */
+
+
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            transition: width 0.3s ease,
+            height 0.3s ease,
+            background-color 0.3s ease;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button onclick="greeting()">Greet </button> -->
+
+
+    <!-- <img class="imageContainer"  onmouseover="differentImage(this)" onmouseleave="orignalImage(this)"  style="width: 400px; height: 400px; object-fit: contain;" src="https://cdn.ferrari.com/cms/network/media/img/resize/6195238ab3c7ea5975d9077d-f150bdcoverthree1300x730pg" alt="Ferrari Image"> -->
+<!-- 
+   <p onmouseenter="changeEmoji(this)" onmouseleave="sameEmoji(this)" style="font-size: 80px;">😂</p>
+
+   <p onmousedown="changeEmoji(this)" onmouseup="sameEmoji(this)" style="font-size: 80px;">😂</p> -->
+
+<!-- 
+   <input type="text" onfocus="changeColor(this)" onblur="sameColor(this)" style="font-size: 80px;"> -->
+
+
+   <!-- <div id="box" onmouseover="changeBoxColor(this)" onmouseleave="changeBoxColor(this)">
+
+   </div>
+</body>
+</html> --> 
+
+
+
+
+
+
+
+
+
+<!-- EXAMPLE CODE  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Fun Box – Minimal DOM</title>
+  <style>
+    /* Box styling */
+    #box {
+      width: 150px;
+      height: 150px;
+      background-color: lightblue;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+    }
+    /* Button styling */
+    button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- A single box with inline event attributes -->
+  <div id="box" onclick="changeBox(this)" onmouseover="rotateBox(this)">Hover me!</div>
+  
+  <!-- A button that also triggers the fun -->
+  <button onclick="changeBox(document.getElementById('box'))">Make It Fun!</button>
+
+  <script>
+    // Generate a random hex color
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Change the box's properties: color, text, and position
+    function changeBox(box) {
+      // Change background color
+      box.style.backgroundColor = getRandomColor();
+      
+      // Change text to a random fun message
+      var messages = ["Wow!", "Cool!", "Fantastic!", "Amazing!", "Brilliant!", "Keep clicking!"];
+      box.textContent = messages[Math.floor(Math.random() * messages.length)];
+      
+      // Move the box to a random position within the viewport
+      var maxX = window.innerWidth - box.offsetWidth;
+      var maxY = window.innerHeight - box.offsetHeight;
+      box.style.left = Math.floor(Math.random() * maxX) + "px";
+      box.style.top  = Math.floor(Math.random() * maxY) + "px";
+    }
+
+    // Rotate the box randomly on hover
+    function rotateBox(box) {
+      // "this" is passed in, so we directly modify its style
+      box.style.transform = "translate(-50%, -50%) rotate(" + (Math.random() * 360) + "deg)";
+    }
+  </script>
+</body>
+</html>
