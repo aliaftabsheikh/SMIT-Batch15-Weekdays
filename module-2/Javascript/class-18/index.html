@@ -106,34 +106,55 @@
   <script>
     // Generate a random hex color
     function getRandomColor() {
-      var letters = '0123456789ABCDEF';
+      var letters = '0123456789ABCDEF';  //HEX CODE 0-9 AND A-F
+   
       var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+      for (var i = 0; i < 6; i++) {   // 6 DIGIT HEX CODE
+        color = color + letters[Math.floor(Math.random() * 16)];
       }
       return color;
     }
 
+
+
     // Change the box's properties: color, text, and position
     function changeBox(box) {
       // Change background color
-      box.style.backgroundColor = getRandomColor();
+      var color = getRandomColor()
+
+      console.log("color", color)
+      box.style.backgroundColor = color ;
       
       // Change text to a random fun message
-      var messages = ["Wow!", "Cool!", "Fantastic!", "Amazing!", "Brilliant!", "Keep clicking!"];
+      var messages = ["Wow!", "Cool!", "Fantastic!", "Amazing!", "Brilliant!", "Keep clicking!", "Shabana", "Hello World"];
+      
+     
       box.textContent = messages[Math.floor(Math.random() * messages.length)];
       
       // Move the box to a random position within the viewport
       var maxX = window.innerWidth - box.offsetWidth;
       var maxY = window.innerHeight - box.offsetHeight;
-      box.style.left = Math.floor(Math.random() * maxX) + "px";
-      box.style.top  = Math.floor(Math.random() * maxY) + "px";
+
+
+      var randomX = Math.floor(Math.random() * maxX);
+      var randomY = Math.floor(Math.random() * maxY);
+
+
+      console.log("randomX", randomX)
+      console.log("randomY", randomY)
+
+      box.style.left = randomX + "px";
+      box.style.top  = randomY + "px";
     }
 
     // Rotate the box randomly on hover
     function rotateBox(box) {
       // "this" is passed in, so we directly modify its style
-      box.style.transform = "translate(-50%, -50%) rotate(" + (Math.random() * 360) + "deg)";
+
+      const rotate = Math.floor( Math.random() * 360) ;
+      console.log("rotate", rotate)
+
+      box.style.transform = "translate(-50%, -50%) rotate(" + rotate + "deg)";
     }
   </script>
 </body>
