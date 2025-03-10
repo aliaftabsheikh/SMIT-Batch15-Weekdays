@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class-19</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .img-container{
+            border: 4px solid rgb(31, 31, 31);
+            height: 400px;
+            width: 400px;
+            border-radius: 10px;
+            background-color: rgb(97, 95, 95);
+            box-shadow: 4px 4px 10px rgb(129, 126, 126);
+            transition: 0.3s ease all;
+        }
+
+        .img-container:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .img-container:active{
+        
+            transform: scale(1.2);
+        }
+
+
+
+    </style>
+
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="img-container">
+        <img onclick="onSwapPic()" class="image" id="swap-img" src="https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIiBOTrayfuvpGh6-m1zJgaGigIGBgZGoDhTtNOaz-I_2DhCHsCElzEwF-SlMwJZKUycmbmJ6an6QD4_I3taTmV-aUkxO0grzwSWC7XPNk9YO-lHtbAx79ye33EdrxhYgboYtYAEcyGQ4HsDJDiVGMAkyLwCEJEA4jM5MTMwsFYAGZEMICCoYUAkEGZ3cQ1x9PQJBgASieoX2QAAAA.webp?wid=180" width="400px" height="400px" style="object-fit: contain;"/>
+    </div>
+
+
+</body>
+</html>
