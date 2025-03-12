@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-20</title>
+
+    <script src="app.js" defer></script>
+
+    <style>
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            border: 4px solid black;
+            font-size: 40px;
+            text-align: center;
+            align-content: center;
+            transition: 0.3s ease all;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div onmouseover="increaseBoxSize()" onmouseleave="orignalSize()" class="box">
+        Box-1
+    </div>
+    <div onmouseover="increaseBoxSize()" onmouseleave="orignalSize()" class="box">
+        Box-2
+    </div>
+  
+</body>
+</html>
