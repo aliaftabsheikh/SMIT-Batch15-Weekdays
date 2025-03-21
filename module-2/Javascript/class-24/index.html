@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-24</title>
+
+
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(216, 164, 9);
+        }
+        #todo_list{
+            display: flex;
+           gap: 10px;
+           margin-top: 10px;
+           padding: 20px;
+           flex-wrap: wrap;
+        }
+
+        .todo_item{
+            border: 1px solid black;
+            box-shadow: 1px 1px 10px rgb(57, 75, 7);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgb(236, 247, 11);
+            text-align: center;
+        }
+
+        .text{
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+
+    .del_btn{
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    .edit_btn{
+        background-color: blue;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+
+    .add_todo_btn{
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    input{
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+        font-size: 14px;
+    }
+    </style>
+
+<script src="app.js" defer></script>
+
+</head>
+<body>
+    <div>
+
+
+        <input id="input_todo" type="text" placeholder="Enter text">
+    
+        <button class="add_todo_btn" onclick="addTodo()" id="btn">Add Todo !</button>
+    
+    
+        <div id="todo_list">
+           <!-- <div class="todo_item">
+            <p class="text">HEllo World</p>
+
+            <button class="del_btn" onclick="deleteTodo()">Delete</button>
+            <button class="edit_btn"  onclick="editTodo()">Edit</button>
+           </div> -->
+
+          
+        </div>
+        
+    </div>
+</body>
+</html>
