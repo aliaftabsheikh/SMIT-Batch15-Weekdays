@@ -1,6 +1,9 @@
 let idCount = 1
 
+
+
 function addTodo() {
+
     const inputElem = document.querySelector('#input_todo')
     const todoList = document.querySelector('#todo_list')
     // const todo_item = document.querySelector('#todo_item')
