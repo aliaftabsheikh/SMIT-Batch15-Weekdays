@@ -1,0 +1,20 @@
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#clock{
+    color: white;
+    font-size: 40px;
+    /* background-color: gray; */
+    background: linear-gradient(rgb(2, 2, 72), rgb(9, 146, 231));
+    padding: 20px;
+    border: 5px solid rgb(174, 174, 242);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+    box-shadow: 5px 10px 20px rgb(53, 150, 210);
+}
