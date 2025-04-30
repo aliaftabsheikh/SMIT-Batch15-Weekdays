@@ -33,10 +33,3 @@
 
 
 
-let a = 10;
-
-function x() {
-    return a;
-}
-
-x()
