@@ -127,11 +127,11 @@
 // }
 
 
-// function y(){
-//     console.log("Hello World");
-// }
 
-// var z = x(y)
+
+// var z = x(function y(){
+//     console.log("Hello World");
+// })
 
 // z()
 
