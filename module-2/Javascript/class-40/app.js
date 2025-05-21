@@ -74,9 +74,7 @@ function calculate(rad, logic) {
     
     return rad.map((item) =>logic(item))
 
-
 }
-
 
 
 
