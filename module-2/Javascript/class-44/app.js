@@ -84,7 +84,7 @@ const cart = ['Shoes', 'Pants', 'Shirt'];
 // .then(paymentStatus => getOrderDetails(paymentStatus))
 // .then(orderDetails => fulfillOrder(orderDetails))
 // .then(fulfillmentStatus => {
-//     console.log(`Fulfillment Status: ${fulfillmentStatus}`);
+//     ceonsole.log(`Fulfillment Status: ${fulfillmentStatus}`);
 // })
 
 
@@ -93,39 +93,43 @@ const promise = createOrder(cart) //--> PROMISE !!
 promise.then((orderId) => {
     console.log(`Order created with ID: ${orderId}`);
     return payment(orderId)
-    
+
 }).then((paymentStatus) => {
     console.log(`Payment Status: ${paymentStatus}`);
 }).catch((error) => {
-    console.log(`Error: ${error}`);
+    console.log(`Error: ${error.message}`);
 })
 
 
 
+
 function validateCart(cart) {
-    return false
+    return true
 }
 
 function payment(orderId) {
     return new Promise(function (resolve, reject) {
 
         setTimeout(() => {
-            if (orderId === 1234567890) {
+            if (orderId === 123456789) {
                 resolve('Payment Successful');
             } else {
-                reject('Payment Failed');
+                const err = new Error('Payment Failed');
+                reject(err);
             }
         }, 3000)
 
 
     })
+
 }
 
 function createOrder(cart) {
 
     const promise = new Promise(function (resolve, reject) {
         if (!validateCart(cart)) {
-            reject('Cart is not valid');
+            const err = new Error('Cart is not valid');
+            reject(err);
         }
 
         const orderId = 1234567890;
