@@ -69,7 +69,7 @@ const cart = ['Shoes', 'Pants', 'Shirt'];
 // PROMISES
 
 // const promise = createOrder(cart)  //API
-
+       
 // promise.then(function(orderId){
 //    return payment(orderId)
 // }).then(function (paymentStatus){
@@ -111,7 +111,7 @@ function payment(orderId) {
     return new Promise(function (resolve, reject) {
 
         setTimeout(() => {
-            if (orderId === 123456789) {
+            if (orderId === 1234567890) {
                 resolve('Payment Successful');
             } else {
                 const err = new Error('Payment Failed');

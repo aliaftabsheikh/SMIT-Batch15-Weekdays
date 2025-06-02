@@ -84,13 +84,16 @@
 
 // AWAIT  ---> Await always execute inside an async function
 
-async function getProducts() {
-    const response = await fetch('https://fakestoreapi.com/products')
+// async function getProducts() {
+//     const response = await fetch('https://fakestoreapi.com/products')
 
-    const data = await response.json()
-    console.log("DATA --->", data);
+//     const data = await response.json()
+//     console.log("DATA --->", data);
 
-    // console.log("RESPONSE --->", response);
-}
+//     // console.log("RESPONSE --->", response);
+// }
 
-getProducts();
+// getProducts();
+
+
+
