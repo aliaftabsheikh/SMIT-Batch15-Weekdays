@@ -14,21 +14,21 @@
 
 
 
-// function x() {
-//     for (var i = 1; i <= 10; i++) {
+function x() {
+    for (let i = 1; i <= 10; i++) {
 
-//         function y(iterator) {
-//             setTimeout(function () {
-//                 console.log(iterator);
+        // function y(iterator) {
+            setTimeout(function () {
+                console.log(i);
 
-//             }, iterator * 1000)
-//         }
+            }, i * 1000)
+        }
 
-//         y(i)
-//     }
-// }
+        // y(i)
+    // }
+}
 
-// x()
+x()
 
 // for (var i = 1; i <= 10; i++) {
 //     console.log(i)
