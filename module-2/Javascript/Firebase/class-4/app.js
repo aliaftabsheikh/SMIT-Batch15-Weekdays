@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 import { getAuth } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
@@ -64,6 +64,8 @@ async function addTodoHandler() {
 
 
 async function getTodos(){
+    todoList.innerHTML = ""
+
     try {
         const todos = await getDocs(collection(db, "todos"));
 
@@ -73,8 +75,14 @@ async function getTodos(){
 
             const ele = `<li id=${doc.id}>${task}</li>`;
 
+
          todoList.innerHTML += ele;
         })
+
+        todoList.childNodes.forEach((li)=>{
+            li.addEventListener('click', deleteTodo)
+        })
+
     } catch (error) {
          console.error("Error adding document: ", error);
     }
@@ -82,3 +90,15 @@ async function getTodos(){
 }
 
 getTodos()
+
+async function deleteTodo(){
+    const id = this.id
+  try {
+     await deleteDoc(doc(db, "todos", id));
+
+  } catch (error) {
+      console.error("Error Deleting document: ", error);
+  }
+
+  getTodos()
+}
