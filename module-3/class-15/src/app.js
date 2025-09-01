@@ -15,18 +15,41 @@ async function main(){
        const db = client.db(dbName)
        const collection = db.collection('students')
 
-       const insertOneDoc = await collection.insertOne({
-         
-       })
+       const data = {
+        name: 'Ali', 
+        age: 24,
+        // email: 'ali@example.com'
+       }
 
-       console.log('Inserted documents =>', insertOneDoc);
+       const { name, age, email } = data
 
-    //    const getDoc = await collection.find({}).toArray()
+      if(name && age && email){
+          const insertOneDoc = await collection.insertOne({
+              name,
+              age,
+              email
+          })
+          console.log('Inserted documents =>', insertOneDoc);
+      }else{
+        console.log("Requirement not met");
+      }
+
+      // }
+
+      //  const getDoc = await collection.find({
+      //     age: 25
+      //  }).toArray()
+
+
+
 
 
     // const getDoc = await collection.find({age: 25}).toArray()
 
-    //    console.log('Found documents =>', getDoc);
+      //  console.log('Found documents =>', getDoc, );
+      //  console.log('Document count  =>', getDoc.length );
+
+
 
     // const updateDoc = await collection.updateMany(
     //     {age: 25},
