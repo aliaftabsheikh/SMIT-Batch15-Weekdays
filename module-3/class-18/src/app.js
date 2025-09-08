@@ -18,17 +18,19 @@ app.use('/getUsers', async (req, res) => {
 })
 
 app.use('/addUser', async (req, res) => {
-    const data = req.body
+    const data = req.body;
     try {
-        const user = await User.insertMany([
-            data
-        ])
-
-        res.send('User added successfully !', user)
+        const user = new User(data);
+        await user.save();
+        res.send({ message: 'User added successfully!', user });
     } catch (error) {
-        res.status(500).send('Error adding user' + error)
+        if (error.code === 11000 && error.keyPattern && error.keyPattern.email) {
+            res.status(400).send('Error: Email already exists.');
+        } else {
+            res.status(500).send('Error adding user: ' + error);
+        }
     }
-})
+});
 
 
 app.use('/updateUser/:id', async (req, res) => {
