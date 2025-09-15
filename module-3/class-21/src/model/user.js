@@ -21,7 +21,7 @@ const userSchema = new Schema({
 
     age: {
         type: Number,
-        required: true,
+        // required: true,
         min: 10,
         max: 40
     },
@@ -57,7 +57,7 @@ const userSchema = new Schema({
 
     gender: {
         type: String,
-        required: true,
+        // required: true,
 
         validate(value){
            if(!["male", "female", "other"].includes(value)){
