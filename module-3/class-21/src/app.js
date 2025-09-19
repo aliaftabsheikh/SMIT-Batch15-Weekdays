@@ -89,7 +89,7 @@ app.use('/signup', async (req, res) => {
         const { firstName, lastName, email, password } = req.body;
 
         if (!firstName || !lastName) {
-            throw new Error('Name is not Valid !')
+            throw new Error('Name is not Valid  !')
         } else if (!validator.isEmail(email)) {
             throw new Error("Email is not valid !")
         } else if (!validator.isStrongPassword(password)) {
@@ -100,6 +100,8 @@ app.use('/signup', async (req, res) => {
 
 
         const hashedPassword = await bcrypt.hash(password, 10)
+ 
+
         console.log(hashedPassword);
         
 
