@@ -1,0 +1,49 @@
+
+
+
+
+.container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+  flex-direction: column;
+}
+
+.dark-mode{
+  background-color: black;
+  color: white;
+}
+
+.light-mode{
+  background-color: rgb(185, 209, 158);
+  color: black;
+}
+
+.header{
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+
+}
+
+.btn-primary{
+  background-color: blue;
+  color: white;
+}
+.btn-danger{
+  background-color: red;
+  color: white;
+}
+
+
+.btn{
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
