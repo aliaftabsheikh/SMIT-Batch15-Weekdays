@@ -4,10 +4,9 @@
     top: 0;
     z-index: 100;
     background-color: rgb(89, 35, 250);
-        box-shadow: 0px 0px 30px rgba(0,0,0, 0.5);
-
-
+    box-shadow: 0px 0px 30px rgba(0,0,0, 0.5)
 }
+
 
 .navbar_content{
     display: flex;
