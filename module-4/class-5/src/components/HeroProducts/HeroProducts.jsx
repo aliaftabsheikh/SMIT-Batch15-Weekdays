@@ -46,7 +46,11 @@ if(products.length === 0){
     )
 }
 
+
+
   return (
+
+    
     <div>
         <div className="flex flex-wrap justify-center mt-10">
 
