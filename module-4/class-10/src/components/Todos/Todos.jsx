@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
+import Swal from 'sweetalert2'
+
+
 const Todos = () => {
 
     const [todos, setTodos] = useState([])
+    const [newTodo, setNewTodo] = useState('')
 
 
     async function getTodos() {
@@ -20,11 +24,21 @@ const Todos = () => {
 
     async function addTodo(){
         try {
-            const newTodo = {task: 'Learn React Context API', completed: false};
+            const newTodoField = {task: newTodo, completed: false};
+
+            if(newTodo.trim() === '') {
+                Swal.fire('Please enter a valid todo');
+                return;
+            };
+
+            if(newTodo.length < 3){
+                Swal.fire('Todo must be at least 3 characters long');
+                return;
+            }
 
            const todo = await fetch('http://localhost:3000/todos', {
             method: "POST",
-            body: JSON.stringify(newTodo),
+            body: JSON.stringify(newTodoField),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -32,14 +46,84 @@ const Todos = () => {
 
         const data = await todo.json();
         setTodos((pre) => [...pre, data]);
+        setNewTodo('')
+       
         } catch (error) {
             console.error('Error adding todo:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong while adding the todo!',
+            })
         }
+    }
+
+    async function deleteTodo(id){
+        try {
+            const deleteTodo = await fetch(`http://localhost:3000/todos/${id}`, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            const data = await deleteTodo.json()
+
+            
+            setTodos(data.data)
+
+
+
+
+        } catch (error) {
+console.error('Error deleting todo:', error);
+
+        }
+   
     }
 
     useEffect(()=>{
         getTodos();
     }, [])
+
+
+    const editTodo= async (id)=>{
+     try {
+           console.log("Edit todo with id:", id);
+
+// const editTodo = prompt("Edit the task:");
+const { value: editedTask } = await Swal.fire({
+    title: "Edit Todo",
+    input: "text",
+    inputLabel: "Enter new task",
+    showCancelButton: true,
+    inputValidator: (value) => {
+        if (!value) {
+            return "You need to write something!";
+        }
+    }
+});
+
+        if(editedTask && editedTask.trim() !== ''){
+            const updateTodo = await fetch(`http://localhost:3000/todos/${id}`, {
+                method: "PUT",
+                body: JSON.stringify({ task: editedTask }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const data = await updateTodo.json();
+
+            setTodos((prevTodos) => prevTodos.map((todo) => (todo.id === id ? data : todo)));
+
+        }
+        } catch (error) {
+            console.error('Error editing todo:', error);
+        }
+    
+}
+    
       
 
   return (
@@ -54,6 +138,8 @@ const Todos = () => {
                 type="text"
                 placeholder="Add new task..."
                 className="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
+                onChange={(e)=> setNewTodo(e.target.value)}
+                value={newTodo}
             />
             <button onClick={addTodo} className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transform hover:scale-105 transition">
                 Add Task
@@ -64,7 +150,7 @@ const Todos = () => {
             {/* Todo items would be mapped here */}
              
              {
-            todos.map((todo) => (
+            todos.map((todo ) => (
                   <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg hover:shadow-md transition">
                 <div className="flex items-center gap-3">
                     <input type="checkbox" className="w-5 h-5 accent-purple-500" />
@@ -72,10 +158,10 @@ const Todos = () => {
                 </div>
                 <div className="flex gap-2">
                     <button className="text-blue-500 hover:text-blue-700">
-                        <span className="material-icons">edit</span>
+                        <span onClick={()=> editTodo(todo.id)} className="material-icons">edit</span>
                     </button>
                     <button className="text-red-500 hover:text-red-700">
-                        <span className="material-icons">delete</span>
+                        <span onClick={()=> deleteTodo(todo.id)} className="material-icons">delete</span>
                     </button>
                 </div>
             </div>

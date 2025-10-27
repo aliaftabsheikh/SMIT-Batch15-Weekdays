@@ -53,6 +53,43 @@ app.post('/todos', (req, res) => {
   }
 })
 
+app.delete('/todos/:id', (req, res) => {
+  try { 
+    const { id } = req.params
+
+    const index = todos.findIndex(todo => todo.id === parseInt(id))
+
+    if(index === -1){
+      res.status(404).json({ error: 'Todo not found' })
+    } else {
+      todos.splice(index, 1)
+      res.status(200).json({ message: "Deleted Successfully", data: todos })
+    }
+  } catch (error) {
+      res.status(400).json({ error: 'Failed to delete todo', details: error.message })
+  }
+})
+
+app.put('/todos/:id', (req, res) => {
+  try {
+    const { id } = req.params
+
+    const {task }= req.body
+
+    const todo = todos.find(todo => todo.id === parseInt(id))
+
+    if(!todo){
+      res.status(404).json({ error: 'Todo not found' })
+    } else {
+      todo.task = task
+      res.status(200).json(todo)
+    }
+
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to update todo', details: error.message })
+  }
+})
+  
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`)
