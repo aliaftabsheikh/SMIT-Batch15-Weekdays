@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+
+@layer utilities {
+  .box {
+   @apply w-[400px] h-[400px] bg-black text-white flex justify-center items-center text-7xl font-bold rounded-xl
+  
+  }
+}
