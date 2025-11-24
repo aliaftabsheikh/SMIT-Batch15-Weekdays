@@ -15,9 +15,12 @@ const products = [
         name: 'Product 2',
         description: "This is product 2",
     },
+    {
+        id: 3,
+        name: 'Product 3',
+        description: "This is product 3",
+    },
 ]
-
-
 
 
 
@@ -49,6 +52,9 @@ app.post('/products', (req, res) => {
 
     try {
         const {name, description}  = req.body;
+
+        console.log("DATA RECEIVED FROM RTK ", {name, description});
+        
 
         if(!name || !description){
             return  res.status(400).json({message: 'All fields are required: name, description'});
