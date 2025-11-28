@@ -1,5 +1,5 @@
 {
-  "name": "class-21",
+  "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.0",
     "@tailwindcss/vite": "^4.1.17",
-    "autoprefixer": "^10.4.22",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.555.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.6",
     "tailwindcss": "^4.1.17"
   },

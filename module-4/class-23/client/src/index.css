@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-purple: #bf00ff;
+  --color-neon-pink: #ff0099;
+  --color-deep-bg: #0a0a0a;
+  --color-card-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--color-deep-bg);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
