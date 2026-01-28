@@ -4,7 +4,7 @@ const { Schema } = mongoose
 const validator = require('validator')
 
 const userSchema = new Schema({
-    firstName: {
+    name: {
         type: String,
         required: true,
         minLength: 3,
@@ -13,15 +13,9 @@ const userSchema = new Schema({
         // lowercase: true
     },
 
-    lastName: {
-        type: String,
-        minLength: 3,
-        maxLength: 30,
-    },
-
     age: {
         type: Number,
-        required: true,
+        // required: true,
         min: 10,
         max: 40
     },
@@ -57,7 +51,7 @@ const userSchema = new Schema({
 
     gender: {
         type: String,
-        required: true,
+        // required: true,
 
         validate(value){
            if(!["male", "female", "other"].includes(value)){
@@ -85,7 +79,7 @@ const userSchema = new Schema({
         collection: 'users',
         timestamps: true
     }
-)   
+)
 
 const User = mongoose.model('User', userSchema);
 

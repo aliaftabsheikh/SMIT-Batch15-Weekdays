@@ -1,0 +1,360 @@
+{
+  "info": {
+    "name": "E-Commerce API Collection",
+    "description": "Complete API endpoints for E-Commerce Platform with Authentication and Product Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "description": "User authentication endpoints (Signup and Login)",
+      "item": [
+        {
+          "name": "Sign Up",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.environment.set('userId', jsonData.user._id);",
+                  "    pm.test('User created successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('User created successfully');",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ahmed Ali\",\n  \"age\": 25,\n  \"email\": \"ahmed@example.com\",\n  \"password\": \"SecurePass123!\",\n  \"gender\": \"Male\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signup",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "signup"]
+            },
+            "description": "Register a new user account"
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Login successful', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Login successful');",
+                  "    });",
+                  "    pm.test('Response has user', function() {",
+                  "        pm.expect(jsonData.user).to.exist;",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"ahmed@example.com\",\n  \"password\": \"SecurePass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            },
+            "description": "Authenticate user and receive JWT token in cookies"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "description": "Product management endpoints (CRUD operations)",
+      "item": [
+        {
+          "name": "Get All Products",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Products fetched successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Products fetched successfully');",
+                  "    });",
+                  "    pm.test('Response has products array', function() {",
+                  "        pm.expect(Array.isArray(jsonData.products)).to.be.true;",
+                  "    });",
+                  "    if (jsonData.products.length > 0) {",
+                  "        pm.environment.set('productId', jsonData.products[0]._id);",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/get-all-products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "get-all-products"]
+            },
+            "description": "Fetch all products from the database"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Product fetched successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Product fetched successfully');",
+                  "    });",
+                  "    pm.test('Response has product object', function() {",
+                  "        pm.expect(jsonData.product).to.exist;",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/get-product/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "get-product", "{{productId}}"]
+            },
+            "description": "Fetch a specific product by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Add Single Product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Product added successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Product added successfully');",
+                  "    });",
+                  "    pm.environment.set('newProductId', jsonData.product._id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Saeed Ghani Multani Mitti\",\n  \"description\": \"Organic Multani Mitti (Fuller's Earth) for glowing skin. Removes impurities and excess oil.\",\n  \"price\": 250,\n  \"discountPrice\": 0,\n  \"category\": \"Beauty\",\n  \"stock\": 200,\n  \"seller\": \"Saeed Ghani\",\n  \"images\": [\"https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/add-product",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "add-product"]
+            },
+            "description": "Add a new product to inventory"
+          },
+          "response": []
+        },
+        {
+          "name": "Add Multiple Products",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Products added successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Products added successfully');",
+                  "    });",
+                  "    pm.test('Response has products array', function() {",
+                  "        pm.expect(Array.isArray(jsonData.products)).to.be.true;",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"name\": \"Shan Bombay Biryani Masala\",\n    \"description\": \"Authentic taste of Bombay Biryani. Easy to cook and delicious. 60g pack.\",\n    \"price\": 150,\n    \"discountPrice\": 0,\n    \"category\": \"Food\",\n    \"stock\": 500,\n    \"seller\": \"Shan Foods\",\n    \"images\": [\"https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?w=600&q=80\"]\n  },\n  {\n    \"name\": \"Tapal Danedar Tea (900g)\",\n    \"description\": \"Pakistan's favorite tea brand. Strong taste and rich aroma. Economical family pack.\",\n    \"price\": 1600,\n    \"discountPrice\": 1550,\n    \"category\": \"Food\",\n    \"stock\": 300,\n    \"seller\": \"Tapal Tea\",\n    \"images\": [\"https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?w=600&q=80\"]\n  },\n  {\n    \"name\": \"Himalayan Pink Salt Lamp\",\n    \"description\": \"Natural Himalayan Pink Salt Lamp. Purifies air and provides a relaxing warm glow.\",\n    \"price\": 1500,\n    \"discountPrice\": 1200,\n    \"category\": \"Home & Garden\",\n    \"stock\": 100,\n    \"seller\": \"Khewra Decor\",\n    \"images\": [\"https://images.pexels.com/photos/3357936/pexels-photo-3357936.jpeg?w=600&q=80\"]\n  }\n]"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/add-multiple-products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "add-multiple-products"]
+            },
+            "description": "Add multiple products at once (Bulk Insert)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Product updated successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Product updated successfully');",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 3200,\n  \"stock\": 45,\n  \"rating\": 4.6,\n  \"discountPrice\": 2900\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/update-product/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "update-product", "{{productId}}"]
+            },
+            "description": "Update product details"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.test('Product deleted successfully', function() {",
+                  "        pm.expect(jsonData.message).to.equal('Product deleted successfully');",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/products/delete-product/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "delete-product", "{{productId}}"]
+            },
+            "description": "Delete a product from inventory"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "userId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "newProductId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
