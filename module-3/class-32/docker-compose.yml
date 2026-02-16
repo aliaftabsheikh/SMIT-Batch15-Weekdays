@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Backend API Server
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: todo-server
+    ports:
+      - "5000:5000"
+    networks:
+      - todo-network
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      # MongoDB Atlas Connection String
+      # Format: mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>
+      - MONGODB_URI=${MONGODB_URI}
+    restart: unless-stopped
+
+  # Frontend React App
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        # API URL accessible from browser (use localhost for external access)
+        VITE_API_URL: http://localhost:5000
+    container_name: todo-client
+    ports:
+      - "3000:80"
+    networks:
+      - todo-network
+    depends_on:
+      - server
+    restart: unless-stopped
+
+# Docker Networks
+networks:
+  todo-network:
+    driver: bridge
+    name: todo-app-network

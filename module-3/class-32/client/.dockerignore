@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+
+# Build output (will be created inside container)
+dist
+dist-ssr
+
+# Git
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# IDE/Editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Local env files
+*.local
+.env.local
+.env.*.local
+
+# Documentation
+README.md
+
+# Test files
+*.test.js
+*.spec.js
+__tests__
+coverage

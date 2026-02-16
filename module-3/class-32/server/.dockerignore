@@ -1,0 +1,25 @@
+# Dependencies (installed in container)
+node_modules
+
+# Git
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE/Editor
+.vscode
+.idea
+
+# Local env files
+.env.local
+.env.*.local
